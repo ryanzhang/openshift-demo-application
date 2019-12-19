@@ -23,8 +23,9 @@ func demo(w http.ResponseWriter, r *http.Request) {
   #        #   #    #   #     #    #     # #      #   #   #  #  # #    # #         #    # #    # #    #   #   #    # #    # #    # #      
   #######   ###   #####  #####      #####  ###### #    #   ##   #  ####  ######    #####   ####   ####    #    ####  #    # #    # # 
   `
+	w.Header().Set("Content-Type", "text/html")
 	w.WriteHeader(http.StatusOK)
-	fmt.Fprint(w, string(val))
+	fmt.Fprint(w, "<pre>"+string(val))
 }
 
 func health(w http.ResponseWriter, r *http.Request) {
