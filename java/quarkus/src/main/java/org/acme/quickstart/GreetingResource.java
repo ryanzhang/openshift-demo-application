@@ -27,8 +27,8 @@ public class GreetingResource {
 
     @GET
     @Path("/")
-    @Produces(MediaType.TEXT_PLAIN)
+    @Produces(MediaType.TEXT_HTML)
     public String hello() {
-        return messagePrefix;
+        return "<marquee bgcolor='red'><h1><pre>" + messagePrefix;
     }
 }
