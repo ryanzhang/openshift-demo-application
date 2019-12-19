@@ -16,10 +16,10 @@ public class GreeterResource {
   String messagePrefix;
 
   @GET
-  @Produces(MediaType.TEXT_PLAIN)
+  @Produces(MediaType.TEXT_HTML)
   @Path("/")
   public String greet() {
-    return greetingService.greet(messagePrefix);
+    return greetingService.greet("<marquee bgcolor='red' ><h1><pre>  " + messagePrefix);
   }
 
   // @POST
